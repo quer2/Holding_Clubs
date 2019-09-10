@@ -9,11 +9,21 @@ package model;
  */
 public class Holding {
 
+	private String name;
+	public Holding(String name) {
+		this.name=name;
+	}
 	/**
-	 * 
+	 * @return the name
 	 */
-	public Holding() {
-		// TODO Auto-generated constructor stub
+	public String getName() {
+		return name;
+	}
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }
