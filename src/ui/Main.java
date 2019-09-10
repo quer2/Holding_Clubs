@@ -97,8 +97,24 @@ public class Main {
 			System.out.println("||||||||||||||||||||||||||");
 			System.out.println("||||||||||||||||||||||||||");
 			
-			String indexString = scanner.nextLine();
+			String index = scanner.nextLine();
 			int indexNum=0;
+			
+			try {
+				indexNum = Integer.parseInt(index);
+			} catch (NumberFormatException e) {
+				System.out.println("Ingrese un valor valido");
+			}
+			
+			switch (indexNum) {
+			case 1:
+				String msg1=" ";
+				msg1=holding.generateClubList();
+				break;
+
+			default:
+				break;
+			}
 		}
 	}
 }
