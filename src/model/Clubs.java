@@ -15,19 +15,17 @@ public class Clubs {
 	private String creationDate;
 	private String type;
 	
-	private ArrayList<Owner>owners;
+	private Owner[] owners;
 	
 	public Clubs(String id, String name, String creationDate, String type) {
 		this.id=id;
 		this.name=name;
 		this.creationDate=creationDate;
 		this.type=type;
-		owners = new ArrayList<Owner>();
+		owners = new Owner[10000];
 	}
 	
-	public void addOwner(String id, String name, String secondName, String date, String type) {
-		owners.add(new Owner(id, name, secondName, date, type));
-	}
+	
 
 	@Override
 	public String toString() {
@@ -78,6 +76,24 @@ public class Clubs {
 	}
 
 	/**
+	 * @return the owners
+	 */
+	public Owner[] getOwners() {
+		return owners;
+	}
+
+
+
+	/**
+	 * @param owners the owners to set
+	 */
+	public void setOwners(Owner[] owners) {
+		this.owners = owners;
+	}
+
+
+
+	/**
 	 * @return the type
 	 */
 	public String getType() {
@@ -94,15 +110,5 @@ public class Clubs {
 	/**
 	 * @return the owners
 	 */
-	public ArrayList<Owner> getOwners() {
-		return owners;
-	}
-
-	/**
-	 * @param owners the owners to set
-	 */
-	public void setOwners(ArrayList<Owner> owners) {
-		this.owners = owners;
-	}
 	
 }

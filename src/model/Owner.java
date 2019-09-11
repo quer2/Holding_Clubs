@@ -17,7 +17,7 @@ public class Owner {
 	private String type;
 	
 	//arraylist
-	private ArrayList<Pet>pets;
+	private Pet[] pets;
 	
 	public Owner(String id, String name, String secondName, String date, String type) {
 		this.id=id;
@@ -25,12 +25,10 @@ public class Owner {
 		this.secondName=secondName;
 		this.date=date;
 		this.type=type;
-		pets = new ArrayList<Pet>();
-	}
+		pets = new Pet[1000];
+		}
 	
-	public void addPet(String name, String type, String date, int id, char gender) {
-		pets.add(new Pet(name, type, date, id, gender));
-	}
+
 	
 
 	@Override
@@ -112,14 +110,18 @@ public class Owner {
 	/**
 	 * @return the pets
 	 */
-	public ArrayList<Pet> getPets() {
+	public Pet[] getPets() {
 		return pets;
 	}
-
 	/**
 	 * @param pets the pets to set
 	 */
-	public void setPets(ArrayList<Pet> pets) {
+	public void setPets(Pet[] pets) {
 		this.pets = pets;
 	}
+
+	/**
+	 * @return the pets
+	 */
+
 }
