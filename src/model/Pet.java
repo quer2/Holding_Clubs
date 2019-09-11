@@ -19,6 +19,7 @@ public class Pet {
 	private String date;
 	private int id;
 	private char gender;
+	private String variable;
 
 	public Pet(String name, String type, String date, int id, char gender) {
 		this.name=name;
@@ -112,7 +113,13 @@ public class Pet {
 
 	@Override
 	public String toString() {
-		return "Pet [name=" + name + ", type=" + type + ", date=" + date + ", id=" + id + ", gender=" + gender + "]";
+		variable="Pet [name=" + name + ", type=" + type + ", date=" + date + ", id=" + id + ", gender=" + gender + "]";
+		return variable;
+	}
+
+	public void settoString(String variable) {
+		this.variable=variable;
+		
 	}
 
 	

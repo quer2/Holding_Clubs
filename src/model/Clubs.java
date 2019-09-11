@@ -14,6 +14,7 @@ public class Clubs {
 	private String name;
 	private String creationDate;
 	private String type;
+	private String variable;
 	
 	private Owner[] owners;
 	
@@ -29,10 +30,13 @@ public class Clubs {
 
 	@Override
 	public String toString() {
-		return "Clubs [id=" + id + ", name=" + name + ", creationDate=" + creationDate + ", type=" + type + ", owners="
+		variable="Clubs [id=" + id + ", name=" + name + ", creationDate=" + creationDate + ", type=" + type + ", owners="
 				+ owners + "]";
+		return variable;
 	}
-
+	public void settoString(String variable) {
+		this.variable=variable;
+	}
 	/**
 	 * @return the id
 	 */
@@ -110,5 +114,20 @@ public class Clubs {
 	/**
 	 * @return the owners
 	 */
-	
+	public String generateOwnerList() {
+		String report="";
+		for(int i=0; i<owners.length;i++) {
+			for(int j=1;j<owners.length && i != j;j++) {
+				if(owners[i].toString().compareToIgnoreCase(owners[j].toString())<0) {
+					String aux = owners[i].toString();
+					owners[i].settoString(owners[j].toString());
+					owners[j].settoString(aux);
+					}
+				}
+			}
+		for(int i=0;i<10;i++) {
+			report =owners[i].toString();
+		}
+		return report;
+		}
 }

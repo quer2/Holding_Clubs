@@ -15,6 +15,7 @@ public class Owner {
 	private String secondName;
 	private String date;
 	private String type;
+	private String variable;
 	
 	//arraylist
 	private Pet[] pets;
@@ -33,8 +34,9 @@ public class Owner {
 
 	@Override
 	public String toString() {
-		return "Owner [id=" + id + ", name=" + name + ", secondName=" + secondName + ", date=" + date + ", type=" + type
+		variable= "Owner [id=" + id + ", name=" + name + ", secondName=" + secondName + ", date=" + date + ", type=" + type
 				+ ", pets=" + pets + "]";
+		return variable;
 	}
 
 	/**
@@ -118,6 +120,14 @@ public class Owner {
 	 */
 	public void setPets(Pet[] pets) {
 		this.pets = pets;
+	}
+
+
+
+
+	public void settoString(String variable) {
+		this.variable=variable;
+		
 	}
 
 	/**

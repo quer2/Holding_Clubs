@@ -8,11 +8,10 @@ package ui;
  *
  */
 import java.util.Scanner;
-
-import com.sun.org.apache.xml.internal.security.Init;
-
 import model.Clubs;
 import model.Holding;
+import model.Owner;
+import model.Pet;
 public class Main {
 
 	private Holding holding;
@@ -23,11 +22,7 @@ public class Main {
 	}
 	public void init() {
 		scanner = new Scanner(System.in);
-		
-		Clubs clubs1 = new Clubs("1321321", "juan", "21/12/10", "perros");
-		Clubs clubs2 = new Clubs("1321321", "juan", "21/12/10", "perros");
-		Clubs clubs3 = new Clubs("1321321", "juan", "21/12/10", "perros");
-		Clubs[] clubs = {clubs1,clubs2,clubs3 };
+		holding = new Holding("Priece", new Clubs[10], new Owner[100], new Pet[1000]);
 	}
 	public static void main(String[] args) {
 		Main main = new Main();
