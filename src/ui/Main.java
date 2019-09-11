@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 import com.sun.org.apache.xml.internal.security.Init;
 
+import model.Clubs;
 import model.Holding;
 public class Main {
 
@@ -21,9 +22,12 @@ public class Main {
 		init();
 	}
 	public void init() {
-		holding = new Holding("Holding pets clubs");
 		scanner = new Scanner(System.in);
 		
+		Clubs clubs1 = new Clubs("1321321", "juan", "21/12/10", "perros");
+		Clubs clubs2 = new Clubs("1321321", "juan", "21/12/10", "perros");
+		Clubs clubs3 = new Clubs("1321321", "juan", "21/12/10", "perros");
+		Clubs[] clubs = {clubs1,clubs2,clubs3 };
 	}
 	public static void main(String[] args) {
 		Main main = new Main();

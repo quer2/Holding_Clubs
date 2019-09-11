@@ -16,12 +16,15 @@ public class Holding {
 	private String name;
 	
 	private Clubs[] clubs;
+	private Owner[] owners;
+	private Pet[] pets;
+	
 	private String [] copyClubs;
 	private String [] copyOwners;
 	private String [] copyPets;
-	private Owner owner;
 	
-	public Holding(String name) {
+	
+	public Holding(String name, Clubs[] clubs, Owner[] owners, Pet[] pets) {
 		this.name=name;
 		clubs = new Clubs[9];
 		copyClubs = new String[9];
@@ -56,11 +59,11 @@ public class Holding {
 	}
 	public String generateOwnerList() {
 		String report="";
-		for(int i=0; i<owner.;i++) {
-			for(int j=1;j<clubs.length && i != j;j++) {
-				if(clubs[i].getName().compareToIgnoreCase(clubs[j].getName())<0) {
-					String aux = clubs[i].getName();
-					copyOwners[i]=clubs[j].getName();
+		for(int i=0; i<owners.length;i++) {
+			for(int j=1;j<owners.length && i != j;j++) {
+				if(owners[i].getName().compareToIgnoreCase(owners[j].getName())<0) {
+					String aux = owners[i].getName();
+					copyOwners[i]=owners[j].getName();
 					clubs[j].setName(aux);
 					}
 				}
@@ -72,12 +75,12 @@ public class Holding {
 		}
 	public String generatePetsList() {
 		String report="";
-		for(int i=0; i<clubs.length;i++) {
-			for(int j=1;j<clubs.length && i != j;j++) {
-				if(clubs[i].getName().compareToIgnoreCase(clubs[j].getName())<0) {
-					String aux = clubs[i].getName();
-					copyPets[i]=clubs[j].getName();
-					clubs[j].setName(aux);
+		for(int i=0; i<pets.length;i++) {
+			for(int j=1;j<pets.length && i != j;j++) {
+				if(pets[i].getName().compareToIgnoreCase(pets[j].getName())<0) {
+					String aux = pets[i].getName();
+					copyPets[i]=pets[j].getName();
+					pets[j].setName(aux);
 					}
 				}
 			}
