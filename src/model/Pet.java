@@ -23,7 +23,7 @@ public class Pet implements Serializable {
 	private String gender;
 	private String variable;
 
-	public Pet(String name, String type, String date, int id, char gender) {
+	public Pet(String name, String type, String date, String id, String gender) {
 		this.name=name;
 		this.type=type;
 		this.date=date;
