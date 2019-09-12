@@ -16,25 +16,42 @@ public class Clubs {
 	private String type;
 	private String variable;
 	
-	private Owner[] owners;
-	private String[] reports;
+	private ArrayList<Owner> owners;
+	
 	
 	public Clubs(String id, String name, String creationDate, String type) {
 		this.id=id;
 		this.name=name;
 		this.creationDate=creationDate;
 		this.type=type;
-		owners = new Owner[10000];
+		owners = new ArrayList<Owner>();
 	}
 	
 	
 
 	@Override
 	public String toString() {
-		variable="Clubs [id=" + id + ", name=" + name + ", creationDate=" + creationDate + ", type=" + type + ", owners="
-				+ owners + "]";
+		variable="Clubs [id=" + id + ", name=" + name + ", creationDate=" + creationDate + ", type=" + type +"]";
 		return variable;
 	}
+	/**
+	 * @return the owners
+	 */
+	public ArrayList<Owner> getOwners() {
+		return owners;
+	}
+
+
+
+	/**
+	 * @param owners the owners to set
+	 */
+	public void setOwners(ArrayList<Owner> owners) {
+		this.owners = owners;
+	}
+
+
+
 	public void settoString(String variable) {
 		this.variable=variable;
 	}
@@ -83,21 +100,6 @@ public class Clubs {
 	/**
 	 * @return the owners
 	 */
-	public Owner[] getOwners() {
-		return owners;
-	}
-
-
-
-	/**
-	 * @param owners the owners to set
-	 */
-	public void setOwners(Owner[] owners) {
-		this.owners = owners;
-	}
-
-
-
 	/**
 	 * @return the type
 	 */
@@ -115,12 +117,4 @@ public class Clubs {
 	/**
 	 * @return the owners
 	 */
-	
-	public String[] generateOwnerList() {
-		reports = null;
-		for(int i=0;i<10;i++) {
-			reports[i] =owners[i].toString()+"\n";
-		}
-		return reports;
-		 }
 }

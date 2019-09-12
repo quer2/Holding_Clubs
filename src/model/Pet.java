@@ -3,11 +3,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  * @author CRISTHIAN CABEZAS
  *
  */
-public class Pet {
+public class Pet implements Serializable {
 	//attributes
 	public static final String CAT = "cat";
 	public static final String DOG = "dog";

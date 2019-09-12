@@ -7,7 +7,10 @@ package ui;
  * @author CRISTHIAN CABEZAS
  *
  */
-import java.util.Scanner;import com.sun.javafx.geom.AreaOp.AddOp;
+import java.util.Scanner;
+import java.util.Vector;
+
+import com.sun.javafx.geom.AreaOp.AddOp;
 
 import model.Clubs;
 import model.Holding;
@@ -48,6 +51,18 @@ public class Main {
 			System.out.println(e.getMessage());
 		}
 		//----------------------------------------------------------------------------
+		//Seriealizable Owners
+		FileReader fReader = new FileReader("C:\\Users\\broly\\Desktop\\Laboratorio2\\text\\owners");
+		BufferedReader bReader= new BufferedReader(fReader);
+		File miFile;
+		Owner objOwner;
+		Owner objAuxOwner;
+		Owner objOwner2;
+		Vector vector = new Vector();
+		ObjectOutputStream oos;
+		ObjectInputStream ois;
+		
+		miFile = new File("\"C:\\\\Users\\\\broly\\\\Desktop\\\\Laboratorio2\\\\text");
 		
 	}
 	public static void main(String[] args) {

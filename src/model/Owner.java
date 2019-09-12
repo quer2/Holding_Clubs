@@ -2,12 +2,13 @@
  * 
  */
 package model;
+import java.io.Serializable;
 import java.util.ArrayList;
 /**
  * @author CRISTHIAN CABEZAS
  *
  */
-public class Owner {
+public class Owner implements Serializable{
 	
 	//Atributes 
 	private String id;
@@ -18,8 +19,7 @@ public class Owner {
 	private String variable;
 	
 	//arraylist
-	private Pet[] pets;
-	private String[] reports;
+	private ArrayList<Pet> pets;
 	
 	public Owner(String id, String name, String secondName, String date, String type) {
 		this.id=id;
@@ -27,16 +27,29 @@ public class Owner {
 		this.secondName=secondName;
 		this.date=date;
 		this.type=type;
-		pets = new Pet[1000];
-		}
-	
+		pets = new ArrayList<Pet>();
+	}
+	/**
+	 * @return the pets
+	 */
+	public ArrayList<Pet> getPets() {
+		return pets;
+	}
 
-	
+	/**
+	 * @param pets the pets to set
+	 */
+	public void setPets(ArrayList<Pet> pets) {
+		this.pets = pets;
+	}
+
+
+
 
 	@Override
 	public String toString() {
 		variable= "Owner [id=" + id + ", name=" + name + ", secondName=" + secondName + ", date=" + date + ", type=" + type
-				+ ", pets=" + pets + "]";
+				+ "]";
 		return variable;
 	}
 
@@ -113,19 +126,6 @@ public class Owner {
 	/**
 	 * @return the pets
 	 */
-	public Pet[] getPets() {
-		return pets;
-	}
-	/**
-	 * @param pets the pets to set
-	 */
-	public void setPets(Pet[] pets) {
-		this.pets = pets;
-	}
-
-
-
-
 	public void settoString(String variable) {
 		this.variable=variable;
 		
@@ -138,11 +138,4 @@ public class Owner {
 		
 		return null;
 	}
-	public String[] generatePetsList() {
-		reports = null;
-		for(int i=0;i<10;i++) {
-			reports[i] =pets[i].toString()+"\n";
-		}
-		return reports;
-		 }
 }

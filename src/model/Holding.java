@@ -16,7 +16,6 @@ public class Holding {
 	private String name;
 	
 	private ArrayList<Clubs> clubs;
-	private Clubs[] clubs2;
 	/**
 	 * @return the clubs
 	 */
@@ -32,15 +31,6 @@ public class Holding {
 	/**
 	 * @return the clubs2
 	 */
-	public Clubs[] getClubs2() {
-		return clubs2;
-	}
-	/**
-	 * @param clubs2 the clubs2 to set
-	 */
-	public void setClubs2(Clubs[] clubs2) {
-		this.clubs2 = clubs2;
-	}
 	public Holding(String name) {
 		this.name=name;
 		clubs = new ArrayList<Clubs>();
