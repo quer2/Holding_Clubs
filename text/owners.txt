@@ -1,0 +1,100 @@
+1,Chelsea,Woods,8/15/1410,Ferruginous hawk
+2,Benny,Richardson,9/12/0310,Feathertail glider
+3,Charlotte,Everett,3/11/9670,Killer whale
+4,Madison,Shaw,6/27/2179,Egyptian vulture
+5,Bob,Furnell,6/13/9748,Puma
+6,Shelby,Nayler,6/24/1159,Arctic fox
+7,Benny,Murphy,3/15/7359,squid
+8,Natalie,Edwards,2/21/9469,Downy woodpecker
+9,Jackeline,Ellis,3/8/3813,Polar Bear
+10,Tom,Camden,11/19/1704,Greater flamingo
+11,Sebastian,Mccall,1/2/6710,European stork
+12,Barry,Clark,11/11/2593,Wombat
+13,Rufus,Zaoui,6/5/8317,Chipmunk
+14,Phillip,Coleman,1/13/8690,Black rhinoceros
+15,Harriet,Morrow,11/11/6111,Caribou
+16,Celia,Victor,4/2/2016,Common seal
+17,Miriam,Walsh,7/12/5554,Vampire Bat
+18,Lara,Chapman,5/5/5084,Kiwi
+19,Matthew,Fenton,6/26/8202,Killer whale
+20,Eileen,Smith,5/11/7503,Puma
+21,Anthony,Janes,7/8/7858,Vampire Bat
+22,Daron,Smith,10/20/3164,Dalmatian
+23,Nicholas,Thomas,11/6/9478,Black spider monkey
+24,Cristal,Gosling,1/12/6940,Dama wallaby
+25,Cameron,Walsh,2/3/1229,Horned rattlesnake
+26,Benjamin,Rodgers,12/3/9191,Frilled lizard
+27,Sebastian,Locke,4/9/1469,Worm
+28,Owen,Bingham,4/21/4602,Blue duck
+29,Mayleen,Vincent,11/13/4401,Emu
+30,Cedrick,Olson,10/10/2828,Snake
+31,Dakota,Owens,10/12/1529,Shirmp
+32,Belinda,Price,4/7/4859,Emerald green tree boa
+33,Vera,King,2/13/8103,Chital
+34,Gloria,Amstead,4/15/9579,Black rhinoceros
+35,Thea,Umney,5/24/9802,Possum
+36,Clint,Patel,8/11/2325,Dodo
+37,Daniel,Snow,9/13/7917,Cape fox
+38,Hayden,Wilcox,9/7/3572,Dog
+39,Zoe,Hastings,7/15/4622,Scorpion
+40,Adelaide,Hooper,10/7/8574,Gila monster
+41,Maxwell,Hill,10/20/5284,Zebu
+42,Aeris,Wren,12/25/6968,Wolf
+43,Bart,Blackburn,10/21/1772,Japanese macaque
+44,Andrea,Jarvis,4/1/1723,Black-footed ferret
+45,Greta,Cameron,8/18/6301,Owl
+46,Tom,Kerr,12/31/2390,Capybara
+47,Phillip,Clarke,9/12/5163,Horned rattlesnake
+48,Ramon,Roscoe,8/4/2545,Albatross
+49,Julian,Rowan,3/25/6416,Dromedary camel
+50,Lillian,Hill,6/5/4647,Hedgedog
+51,Catherine,Gregory,3/18/8837,Carpet python
+52,Carrie,Todd,12/3/4680,Fork-tailed drongo
+53,Norah,Shepherd,7/9/5006,Hippopotamus
+54,Kenzie,Hall,4/30/8924,Sheep
+55,Denny,Bayliss,8/12/0775,Common ringtail
+56,Aileen,Eastwood,1/1/6010,Four-horned antelope
+57,Aiden,Michael,6/27/1392,Dog
+58,Chuck,Beal,3/31/0903,Common shelduck
+59,Sabrina,Baker,6/30/3350,Downy woodpecker
+60,Alexa,Salt,2/25/5249,Great cormorant
+61,Dasha,Parker,10/6/0686,Brazilian tapir
+62,Kaylee,Cassidy,12/21/9530,Galapagos tortoise
+63,Danny,Michael,8/5/5003,wasp
+64,Ada,Fall,4/9/1758,Dog
+65,Anais,Warner,2/6/8519,Caracal
+66,Sabina,Hooper,12/11/8155,Chital
+67,Elisabeth,Eyres,4/5/5240,Komodo dragon
+68,Faith,Roberts,1/7/6109,Dog
+69,Rocco,Robinson,1/20/3683,Galapagos sea lion
+70,Tyson,Edwards,4/29/2986,Coyote
+71,Michaela,Lynch,7/7/5671,Penguin
+72,Harvey,Flack,7/19/0900,Barking gecko
+73,Georgia,Pitt,1/21/2698,Javanese cormorant
+74,Clint,Russel,3/2/4494,Brazilian tapir
+75,Maria,Anderson,7/31/8829,Gaur
+76,Sebastian,Stevens,12/8/5200,Wallaby
+77,Nicholas,Jarvis,10/28/5929,Coyote
+78,Aiden,Becker,8/20/9338,Cattle egret
+79,Marigold,Hall,8/5/9170,Honey badger
+80,Ronald,Parker,7/10/1518,Black-tailed deer
+81,Tyler,Mann,7/6/2782,Panda
+82,Tess,Brock,3/3/1914,Cormorant
+83,Chadwick,Benson,1/25/4029,Leopard
+84,Jayden,Irving,6/27/3123,Canada goose
+85,Percy,Parker,5/7/0125,Giant heron
+86,Daron,Dunbar,1/14/8885,Feathertail glider
+87,Matt,Fleming,1/13/2877,Wombat
+88,Jacob,Darcy,1/1/0424,Dama wallaby
+89,Leanne,Barrett,10/18/3769,Common genet
+90,Elijah,Reading,4/13/8702,Hoary marmot
+91,Lorraine,Bradshaw,8/24/0969,Honey badger
+92,Johnathan,Snell,5/1/5477,Penguin
+93,Ron,Lynch,8/8/6069,Toucan
+94,Bob,Pope,8/28/2002,Buttermilk snake
+95,Carter,Watt,7/13/6943,Desert spiny lizard
+96,Gabriel,Hill,1/4/0916,Desert tortoise
+97,Javier,Foxley,10/7/7159,Caribou
+98,Olivia,Jones,1/7/9041,Gambels quail
+99,Gloria,Adler,2/19/0680,Jabiru stork
+100,Rita,Porter,6/10/1655,Weasel

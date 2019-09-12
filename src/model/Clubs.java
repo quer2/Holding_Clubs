@@ -24,7 +24,7 @@ public class Clubs {
 		this.name=name;
 		this.creationDate=creationDate;
 		this.type=type;
-		owners = new ArrayList<Owner>();
+		owners = new ArrayList<Owner>(999);
 	}
 	
 	
@@ -113,8 +113,7 @@ public class Clubs {
 	public void setType(String type) {
 		this.type = type;
 	}
-
-	/**
-	 * @return the owners
-	 */
+	public void addOwners(Owner  owner1){
+		owners.add(owner1);
+	}
 }

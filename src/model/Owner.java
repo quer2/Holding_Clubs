@@ -134,8 +134,7 @@ public class Owner implements Serializable{
 	/**
 	 * @return the pets
 	 */
-	public String ordenarlist() {
-		
-		return null;
+	public void addPets(Pet  pets1){
+		pets.add(pets1);
 	}
 }

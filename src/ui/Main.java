@@ -16,7 +16,13 @@ import model.Clubs;
 import model.Holding;
 import model.Owner;
 import model.Pet;
-import java.io.*;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
 public class Main {
 
 	private Holding holding;
@@ -37,10 +43,12 @@ public class Main {
 		try {
 			FileReader fr = new FileReader("C:\\Users\\broly\\Desktop\\Laboratorio2\\text\\clubs");
 			BufferedReader br = new BufferedReader(fr);
-				msg= br.readLine();
-				String x="";
-				x=msg;
-				for(int i=0;i<holding.getClubs().size();i++) {
+				
+				for(int i=0;i<10;i++) {
+					msg="";
+					msg= br.readLine();
+					String x="";
+					x=msg;
 					String []arreglo = x.split(",");
 					holding.getClubs().get(i).setId(arreglo[0]);
 					holding.getClubs().get(i).setName(arreglo[1]);
@@ -51,19 +59,74 @@ public class Main {
 			System.out.println(e.getMessage());
 		}
 		//----------------------------------------------------------------------------
+		//public Owner(String id, String name, String secondName, String date, String type) {
+			
 		//Seriealizable Owners
-		FileReader fReader = new FileReader("C:\\Users\\broly\\Desktop\\Laboratorio2\\text\\owners");
-		BufferedReader bReader= new BufferedReader(fReader);
-		File miFile;
-		Owner objOwner;
-		Owner objAuxOwner;
-		Owner objOwner2;
-		Vector vector = new Vector();
-		ObjectOutputStream oos;
-		ObjectInputStream ois;
+		String msgOwner="";
+		try {
+			FileReader frReader = new FileReader("C:\\Users\\broly\\Desktop\\Laboratorio2\\text\\owners");
+			BufferedReader brReader = new BufferedReader(frReader);
+				for(int i=0;i<holding.getClubs().size();i++) {
+					for(int j=0; j<100;j++) {
+						msgOwner="";
+						msgOwner= brReader.readLine();
+						String xx="";
+						xx=msgOwner;
+						String []arregloO = xx.split(",");
+						holding.getClubs().get(i).getOwners().get(j).setId(arregloO[0]);
+						holding.getClubs().get(i).getOwners().get(j).setName(arregloO[1]);
+						holding.getClubs().get(i).getOwners().get(j).setSecondName(arregloO[2]);
+						holding.getClubs().get(i).getOwners().get(j).setDate(arregloO[3]);
+						holding.getClubs().get(i).getOwners().get(j).setType(arregloO[4]);
+					}
+				}
+		} catch (FileNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+		try (ObjectOutputStream cos = new ObjectOutputStream(new FileOutputStream("\"C:\\Users\\broly\\Desktop\\Laboratorio2\\text\\serielizableOwners.ddr"))){
+			for(int i=0;i<100;i++) {
+				cos.writeObject(holding.getClubs().get(i).toString());
+			}
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
 		
-		miFile = new File("\"C:\\\\Users\\\\broly\\\\Desktop\\\\Laboratorio2\\\\text");
 		
+		//----------------------------------------------------------------------------
+		//Seriealizable Pets
+		String msgPets="";
+		try {
+			FileReader frReader2 = new FileReader("C:\\Users\\broly\\Desktop\\Laboratorio2\\text\\pets");
+			BufferedReader brReader2 = new BufferedReader(frReader2);
+				for(int i=0;i<holding.getClubs().size();i++) {
+					for(int j=0; j<100;j++) {
+						for(int f=0;f<1000 && holding.getClubs().get(i).getOwners().size()<100;f++) {
+							msgPets="";
+							msgPets= brReader2.readLine();
+							String xxx="";
+							xxx=msgOwner;
+							String []arregloO0 = xxx.split(",");
+							holding.getClubs().get(i).getOwners().get(j).getPets().get(f).setId(arregloO0[0]);
+							holding.getClubs().get(i).getOwners().get(j).getPets().get(f).setName(arregloO0[1]);
+							holding.getClubs().get(i).getOwners().get(j).getPets().get(f).setDate(arregloO0[2]);
+							holding.getClubs().get(i).getOwners().get(j).getPets().get(f).setGender(arregloO0[3]);
+							holding.getClubs().get(i).getOwners().get(j).getPets().get(f).setType(arregloO0[4]);
+							
+						}
+					}
+				}
+		} catch (FileNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+		try (ObjectOutputStream cosi = new ObjectOutputStream(new FileOutputStream("\"C:\\Users\\broly\\Desktop\\Laboratorio2\\text\\serielizablePets.ddr"))){
+			for(int i=0;i<100;i++) {
+				for(int j=0;j<1000&& holding.getClubs().get(i).getOwners().size()<100;j++)
+				cosi.writeObject(holding.getClubs().get(i).getOwners().get(j));
+			}
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+	
 	}
 	public static void main(String[] args) {
 		Main main = null;

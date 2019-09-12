@@ -19,8 +19,8 @@ public class Pet implements Serializable {
 	private String name;
 	private String type;
 	private String date;
-	private int id;
-	private char gender;
+	private String id;
+	private String gender;
 	private String variable;
 
 	public Pet(String name, String type, String date, int id, char gender) {
@@ -88,28 +88,28 @@ public class Pet implements Serializable {
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param arregloO0 the id to set
 	 */
-	public void setId(int id) {
-		this.id = id;
+	public void setId(String arregloO0) {
+		this.id = arregloO0;
 	}
 
 	/**
 	 * @return the gender
 	 */
-	public char getGender() {
+	public String getGender() {
 		return gender;
 	}
 
 	/**
 	 * @param gender the gender to set
 	 */
-	public void setGender(char gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 

@@ -16,24 +16,10 @@ public class Holding {
 	private String name;
 	
 	private ArrayList<Clubs> clubs;
-	/**
-	 * @return the clubs
-	 */
-	public ArrayList<Clubs> getClubs() {
-		return clubs;
-	}
-	/**
-	 * @param clubs the clubs to set
-	 */
-	public void setClubs(ArrayList<Clubs> clubs) {
-		this.clubs = clubs;
-	}
-	/**
-	 * @return the clubs2
-	 */
+	
 	public Holding(String name) {
 		this.name=name;
-		clubs = new ArrayList<Clubs>();
+		clubs = new ArrayList<Clubs>(9);
 	}
 	/**
 	 * @return the name
@@ -50,5 +36,19 @@ public class Holding {
 	/**
 	 * @return the clubs
 	 */
-	
+	/**
+	 * @return the clubs
+	 */
+	public ArrayList<Clubs> getClubs() {
+		return clubs;
+	}
+	/**
+	 * @param clubs the clubs to set
+	 */
+	public void setClubs(ArrayList<Clubs> clubs) {
+		this.clubs = clubs;
+	}
+	public void addClubs(Clubs  clubs1){
+		clubs.add(clubs1);
+	}
 }
