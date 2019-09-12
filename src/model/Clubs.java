@@ -17,6 +17,7 @@ public class Clubs {
 	private String variable;
 	
 	private Owner[] owners;
+	private String[] reports;
 	
 	public Clubs(String id, String name, String creationDate, String type) {
 		this.id=id;
@@ -114,20 +115,12 @@ public class Clubs {
 	/**
 	 * @return the owners
 	 */
-	public String generateOwnerList() {
-		String report="";
-		for(int i=0; i<owners.length;i++) {
-			for(int j=1;j<owners.length && i != j;j++) {
-				if(owners[i].toString().compareToIgnoreCase(owners[j].toString())<0) {
-					String aux = owners[i].toString();
-					owners[i].settoString(owners[j].toString());
-					owners[j].settoString(aux);
-					}
-				}
-			}
+	
+	public String[] generateOwnerList() {
+		reports = null;
 		for(int i=0;i<10;i++) {
-			report =owners[i].toString();
+			reports[i] =owners[i].toString()+"\n";
 		}
-		return report;
-		}
+		return reports;
+		 }
 }

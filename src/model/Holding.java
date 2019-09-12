@@ -15,21 +15,35 @@ public class Holding {
 
 	private String name;
 	
-	private Clubs[] clubs;
-	private Owner[] owners;
-	private Pet[] pets;
-	
-	private String [] copyClubs;
-	private String [] copyOwners;
-	private String [] copyPets;
-	
-	private Clubs c;
-	
-	
-	public Holding(String name, Clubs[] clubs, Owner[] owners, Pet[] pets) {
+	private ArrayList<Clubs> clubs;
+	private Clubs[] clubs2;
+	/**
+	 * @return the clubs
+	 */
+	public ArrayList<Clubs> getClubs() {
+		return clubs;
+	}
+	/**
+	 * @param clubs the clubs to set
+	 */
+	public void setClubs(ArrayList<Clubs> clubs) {
+		this.clubs = clubs;
+	}
+	/**
+	 * @return the clubs2
+	 */
+	public Clubs[] getClubs2() {
+		return clubs2;
+	}
+	/**
+	 * @param clubs2 the clubs2 to set
+	 */
+	public void setClubs2(Clubs[] clubs2) {
+		this.clubs2 = clubs2;
+	}
+	public Holding(String name) {
 		this.name=name;
-		clubs = new Clubs[9];
-		copyClubs = new String[9];
+		clubs = new ArrayList<Clubs>();
 	}
 	/**
 	 * @return the name
@@ -43,42 +57,8 @@ public class Holding {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String generateClubList() {
-		for(int i=0; i<clubs.length;i++) {
-			for(int j=1;j<clubs.length && i != j;j++) {
-				if(clubs[i].toString().compareToIgnoreCase(clubs[j].toString())<0) {
-					String aux = clubs[i].toString();
-					clubs[i].settoString(clubs[j].toString());
-					clubs[j].settoString(aux);
-				}
-			}
-		}
-		String report=" ";
-		for(int i=0;i<10;i++) {
-			report =copyClubs[i];
-		}
-		return report;
-	}
-	public String generateOwnerList() {
-		String msg="";
-		msg=c.generateOwnerList();
-		return msg;
-		}
+	/**
+	 * @return the clubs
+	 */
 	
-	public String generatePetsList() {
-		String report="";
-		for(int i=0; i<pets.length;i++) {
-			for(int j=1;j<pets.length && i != j;j++) {
-				if(pets[i].toString().compareToIgnoreCase(pets[j].toString())<0) {
-					String aux = pets[i].toString();
-					pets[i].settoString(pets[j].toString());
-					pets[j].settoString(aux);
-					}
-				}
-			}
-		for(int i=0;i<10;i++) {
-			report =copyPets[i];
-		}
-		return report;
-		}
 }

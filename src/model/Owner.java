@@ -19,6 +19,7 @@ public class Owner {
 	
 	//arraylist
 	private Pet[] pets;
+	private String[] reports;
 	
 	public Owner(String id, String name, String secondName, String date, String type) {
 		this.id=id;
@@ -133,5 +134,15 @@ public class Owner {
 	/**
 	 * @return the pets
 	 */
-
+	public String ordenarlist() {
+		
+		return null;
+	}
+	public String[] generatePetsList() {
+		reports = null;
+		for(int i=0;i<10;i++) {
+			reports[i] =pets[i].toString()+"\n";
+		}
+		return reports;
+		 }
 }

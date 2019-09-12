@@ -1,0 +1,10 @@
+1,Global Print,3/10/6205,Clown Fish
+2,Amazon.com,10/15/1833,Huron
+3,Telekom,12/12/5294,Calf
+4,Apple Inc.,5/27/9515,Gray duiker
+5,Zepter,2/1/0280,Somali
+6,Demaco,3/8/9737,Jungle cat
+7,AECOM,10/18/8052,Common langur
+8,CarMax,4/17/0542,Brown pelican
+9,Vodafone,5/27/8201,Giant heron
+10,Apple Inc.,6/20/5089,Eastern diamondback rattlesnake

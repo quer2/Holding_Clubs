@@ -7,25 +7,56 @@ package ui;
  * @author CRISTHIAN CABEZAS
  *
  */
-import java.util.Scanner;
+import java.util.Scanner;import com.sun.javafx.geom.AreaOp.AddOp;
+
 import model.Clubs;
 import model.Holding;
 import model.Owner;
 import model.Pet;
+import java.io.*;
 public class Main {
 
 	private Holding holding;
 	private Scanner scanner;
+	private Clubs clubs;
+	private Owner owner;
+	private Pet petsPet;
 	
-	public Main() {
+	public Main() throws IOException {
 		init();
 	}
-	public void init() {
+	public void init() throws IOException {
 		scanner = new Scanner(System.in);
-		holding = new Holding("Priece", new Clubs[10], new Owner[100], new Pet[1000]);
+		holding = new Holding("Priece");
+		
+		//-----------------------------------------------------------------------------
+		String msg="";
+		try {
+			FileReader fr = new FileReader("C:\\Users\\broly\\Desktop\\Laboratorio2\\text\\clubs");
+			BufferedReader br = new BufferedReader(fr);
+				msg= br.readLine();
+				String x="";
+				x=msg;
+				for(int i=0;i<holding.getClubs().size();i++) {
+					String []arreglo = x.split(",");
+					holding.getClubs().get(i).setId(arreglo[0]);
+					holding.getClubs().get(i).setName(arreglo[1]);
+					holding.getClubs().get(i).setCreationDate(arreglo[2]);
+					holding.getClubs().get(i).setType(arreglo[3]);
+				}
+		} catch (FileNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+		//----------------------------------------------------------------------------
+		
 	}
 	public static void main(String[] args) {
-		Main main = new Main();
+		Main main = null;
+		try {
+			main = new Main();
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
 		main.setUp();
 		main.run();
 	}
@@ -108,7 +139,7 @@ public class Main {
 			switch (indexNum) {
 			case 1:
 				String msg1=" ";
-				msg1=holding.generateClubList();
+		//		msg1=holding.generateClubList();
 				break;
 
 			default:
