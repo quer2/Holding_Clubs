@@ -3,11 +3,12 @@
  */
 package model;
 import java.util.ArrayList;
+import java.util.Comparator;
 /**
  * @author CRISTHIAN CABEZAS
  *
  */
-public class Clubs {
+public class Clubs implements Comparator<Clubs>{
 
 	//Attributes
 	private String id;
@@ -115,5 +116,17 @@ public class Clubs {
 	}
 	public void addOwners(Owner  owner1){
 		owners.add(owner1);
+	}
+
+
+
+	@Override
+	public int compare(Clubs clubs1, Clubs clubs2) {
+		int r;
+		r= clubs1.getName().compareTo(clubs2.getName());
+		if(r==0) {
+			r=clubs1.getId().compareTo(clubs2.getId());
+		}
+		return r;
 	}
 }

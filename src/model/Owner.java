@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author CRISTHIAN CABEZAS
  *
  */
-public class Owner implements Serializable{
+public class Owner implements Serializable, Comparable<Owner> {
 	
 	//Atributes 
 	private String id;
@@ -136,5 +136,9 @@ public class Owner implements Serializable{
 	 */
 	public void addPets(Pet  pets1){
 		pets.add(pets1);
+	}
+	@Override
+	public int compareTo(Owner owner) {
+		return 0;
 	}
 }

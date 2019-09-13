@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author CRISTHIAN CABEZAS
  *
  */
-public class Pet implements Serializable {
+public class Pet implements Serializable, Comparable<Pet>  {
 	//attributes
 	public static final String CAT = "cat";
 	public static final String DOG = "dog";
@@ -122,6 +122,12 @@ public class Pet implements Serializable {
 	public void settoString(String variable) {
 		this.variable=variable;
 		
+	}
+
+	@Override
+	public int compareTo(Pet o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	

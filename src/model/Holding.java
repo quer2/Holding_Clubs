@@ -120,6 +120,7 @@ public class Holding {
 		return  arregloOwner;
 	}
 	//-------------------------------------------------------------------
+	//Burbuja
 	public String ordenarOwnerporId() {
 		String msg="";
 		for(int i=0;i<clubs.size();i++) {
@@ -139,7 +140,57 @@ public class Holding {
 		return msg;
 	}
 	
+	//--------------------------------------------------------------------
+	//Insercion
+	public String ordenarOwnerporNombre() {
+		String msg="";
+		for(int i=0;i<clubs.size();i++) {
+			for(int j=0;j<arregloOwner.length;j++) {
+				for(int f=1;f<arregloOwner.length;f++) {
+					if(clubs.get(i).getOwners().get(j).getName().compareToIgnoreCase(clubs.get(i).getOwners().get(f).getName())<0) {
+						int pos = j;
+						String aux = arregloOwner[j];
+						while((pos>0) && (arregloOwner[pos-1].compareTo(aux))>0) {
+							arregloOwner[pos]=arregloOwner[pos-1];
+							pos--;
+						}
+						arregloOwner[pos]=aux;
+					}
+				}	
+			}
+		}
+		for(int g=0;g<arregloOwner[g].length();g++) {
+			msg+=arregloOwner[g];
+		}
+		return msg;
+	}
 	
+	//----------------------------------------------------------------------
+	//Seleccion
+	public String ordenarOwnerporApellido() {
+		String msg="";
+		for(int i=0;i<clubs.size();i++) {
+			for(int j=0;j<arregloOwner.length;j++) {
+				for(int f=1;f<arregloOwner.length;f++) {
+					if(clubs.get(i).getOwners().get(j).getSecondName().compareToIgnoreCase(clubs.get(i).getOwners().get(f).getSecondName())<0) {
+						
+						
+						
+						/**
+						int pos = j;
+						String aux = arregloOwner[j];
+						while((pos>0) && (arregloOwner[pos-1].compareTo(aux))>0) {
+							arregloOwner[pos]=arregloOwner[pos-1];
+							pos--;
+						}
+						arregloOwner[pos]=aux;
+						**/
+					}
+				}	
+			}
+		}
+		return msg;
+	}
 	
 	
 }
