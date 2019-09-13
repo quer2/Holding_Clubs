@@ -58,7 +58,8 @@ public class Holding {
 	}
 	
 	//---------------------------------------------------------
-	public void ordenarClubsporId() {
+	public String ordenarClubsporId(String[] arreglo) {
+		String msg="";
 		for(int i=0;i<recolectarToString().length;i++) {
 			for(int j=1;j<recolectarToString().length;j++) {
 				if(clubs.get(i).getId().compareToIgnoreCase(clubs.get(i).getId())<0) {
@@ -69,6 +70,10 @@ public class Holding {
 				}
 			}
 		}
+		for(int g=0;g<clubs.size();g++) {
+			msg+=arreglo[g];
+		}
+		return msg;
 	}
 	
 	//------------------------------------------------------------
@@ -80,7 +85,7 @@ public class Holding {
 	}
 //------------------------------------------------------------------
 	
-	public String ordenarClubsporNombre() {
+	public String ordenarClubsporNombre(String[] arreglo) {
 		String msg="";
 		for(int i=0;i<recolectarToString().length;i++) {
 			for(int j=1;j<recolectarToString().length;j++) {
@@ -97,7 +102,7 @@ public class Holding {
 		return msg;
 	}
 	//----------------------------------------------------------------
-	public String ordenarClubsporFecha() {
+	public String ordenarClubsporFecha(String[] arreglo) {
 		String msg="";
 		for(int i=0;i<recolectarToString().length;i++) {
 			for(int j=1;j<recolectarToString().length;j++) {
@@ -128,7 +133,7 @@ public class Holding {
 	}
 	//-------------------------------------------------------------------
 	//Burbuja
-	public String ordenarOwnerporId() {
+	public String ordenarOwnerporId(String[] msg2) {
 		String msg="";
 		for(int i=0;i<clubs.size();i++) {
 			for(int j=0;j<arregloOwner.length;j++) {
@@ -149,7 +154,7 @@ public class Holding {
 	
 	//--------------------------------------------------------------------
 	//Insercion
-	public String ordenarOwnerporNombre() {
+	public String ordenarOwnerporNombre(String[] msg2) {
 		String msg="";
 		for(int i=0;i<clubs.size();i++) {
 			for(int j=0;j<arregloOwner.length;j++) {
@@ -174,7 +179,7 @@ public class Holding {
 	
 	//----------------------------------------------------------------------
 	//Seleccion
-	public String ordenarOwnerporApellido() {
+	public String ordenarOwnerporApellido(String[] msg2) {
 		String msg="";
 		int contador =1;
 		for(int i=0;i<clubs.size();i++) {
@@ -221,7 +226,7 @@ public class Holding {
 	}
 	
 	//-------------------------------------------------------------------------------
-	public String ordenarOwnerporFecha() {
+	public String ordenarOwnerporFecha(String[] msg2) {
 		String msg="";
 		for(int i=0;i<clubs.size();i++) {
 			for(int j=0;j<arregloOwner.length;j++) {
@@ -242,7 +247,7 @@ public class Holding {
 	
 	//-------------------------------------------------------------------------------
 	
-	public String ordenarPetporId() {
+	public String ordenarPetporId(String[] msg3) {
 		String msg="";
 		for(int i=0;i<clubs.size();i++) {
 			for(int h=0;h<clubs.get(i).getOwners().size();h++) {
@@ -281,7 +286,7 @@ public class Holding {
 	
 	//----------------------------------------------------------------------------------
 	
-	public String ordenarPetporNombre() {
+	public String ordenarPetporNombre(String[] msg3) {
 		String msg="";
 		for(int i=0;i<clubs.size();i++) {
 			for(int h=0;h<clubs.get(i).getOwners().size();h++) {
@@ -303,7 +308,7 @@ public class Holding {
 	}
 	
 	//------------------------------------------------------------------------------------
-	public String ordenarPetporfecha() {
+	public String ordenarPetporfecha(String[] msg3) {
 		String msg="";
 		for(int i=0;i<clubs.size();i++) {
 			for(int h=0;h<clubs.get(i).getOwners().size();h++) {
@@ -435,9 +440,119 @@ public class Holding {
 			}
 			return msg;
 		}
-	
-	
-	
+		
+	//--------------------------------------------------------------------------------------------
+		
+		public String buscarxPetBinaries(String[] listaPet, String Id) {
+			String obj="";
+			for(int i=0; i<listaPet[i].length();i++) {
+				String obj_buscado = listaPet[i];
+				int inferior = 0;
+				int centro;
+				int superior = listaPet.length-1;
+				
+				while(inferior<=superior){
+					centro=(superior+inferior)/2;
+					try {
+					if(listaPet[centro]==obj_buscado) {
+						obj="Se encontro la mascota buscada"+listaPet[centro];
+					}
+					}catch (NumberFormatException e) {
+						obj=e.getMessage();					}
+				}
+			}
+			return obj;
+		}
+		
+		//--------------------------------------------------------------------------------------------
+		
+		public String buscarxOwnerBinaries(String[] listaOwner, String Id) {
+			String obj="";
+			for(int i=0; i<listaOwner[i].length();i++) {
+				String obj_buscado = listaOwner[i];
+				int inferior = 0;
+				int centro;
+				int superior = listaOwner.length-1;
+				
+				while(inferior<=superior){
+					centro=(superior+inferior)/2;
+					try {
+					if(listaOwner[centro]==obj_buscado) {
+						obj="Se encontro la mascota buscada"+listaOwner[centro];
+					}
+					}catch (NumberFormatException e) {
+						obj=e.getMessage();					}
+				}
+			}
+			return obj;
+		}
+				//--------------------------------------------------------------------------------------------
+				
+		public String buscarxClubBinaries(String[] listaClub, String Id) {
+			String obj="";
+			for(int i=0; i<listaClub[i].length();i++) {
+				String obj_buscado = listaClub[i];
+				int inferior = 0;
+				int centro;
+				int superior = listaClub.length-1;
+				
+				while(inferior<=superior){
+					centro=(superior+inferior)/2;
+					try {
+					if(listaClub[centro]==obj_buscado) {
+						obj="Se encontro la mascota buscada"+listaClub[centro];
+					}
+					}catch (NumberFormatException e) {
+						obj=e.getMessage();					}
+				}
+			}
+			return obj;
+		}
+		public String eliminarclub(String idE) {
+			String msg="";
+			Clubs objClubs=buscarxClub(idE);
+			if(objClubs!=null) {
+				for(int i=0;i<clubs.size();i++) {
+					if(clubs.get(i).getId().equalsIgnoreCase(idE)) {
+						clubs.remove(i);
+						msg="Se elemino el club";
+					}
+				}
+			}
+			return msg;
+		}
+		public String eliminarOwner(String idEO) {
+			String msg="";
+			Owner objOwner=buscarxOwner(idEO);
+			if(objOwner!=null) {
+				for(int f=0;f<clubs.size();f++) {
+					for(int i=0;i<clubs.get(i).getOwners().size();i++) {
+						if(clubs.get(f).getOwners().get(i).getId().equalsIgnoreCase(idEO)) {
+							clubs.get(f).getOwners().remove(i);
+							msg="Se elemino el dueño";
+						}
+					}
+				}
+			}
+			return msg;
+		}
+		public String eliminarMascota(String idEM) {
+			String msg="";
+			Owner objOwner=buscarxOwner(idEM);
+			if(objOwner!=null) {
+				for(int f=0;f<clubs.size();f++) {
+					for(int i=0;i<clubs.get(i).getOwners().size();i++) {
+						for(int c=0;c<clubs.get(f).getOwners().get(i).getPets().size();c++) {
+							if(clubs.get(f).getOwners().get(i).getPets().get(c).getId().equalsIgnoreCase(idEM)) {
+								clubs.get(f).getOwners().get(i).getPets().remove(c);
+								msg="Se elemino la mascota";
+							}
+						}
+					}
+				}
+			}
+			return msg;
+		}
 	
 	
 	

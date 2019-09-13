@@ -201,7 +201,10 @@ public class Main {
 			System.out.println("9. Registrar club");
 			System.out.println("10. Registrar dueño");
 			System.out.println("11. Registrar mascota");
-			System.out.println("12. Salir");
+			System.out.println("12. Eliminar club");
+			System.out.println("13. Eliminar dueño");
+			System.out.println("14. Eliminar mascota");
+			System.out.println("15. Salir");
 			System.out.println("||||||||||||||||||||||||||");
 			System.out.println("||||||||||||||||||||||||||");
 			
@@ -213,16 +216,257 @@ public class Main {
 			} catch (NumberFormatException e) {
 				System.out.println("Ingrese un valor valido");
 			}
-			
+			String msg4;
 			switch (indexNum) {
+			
 			case 1:
-				String msg1=" ";
-		//		msg1=holding.generateClubList();
+				String[] msg1;
+				System.out.println("||||||||||||||||||||||||||");
+				System.out.println("\n Please pick an option: ");
+				System.out.println("1. Ordenar por Id");
+				System.out.println("2. Ordenar por nombres");
+				System.out.println("3. Ordenar por Fecha");
+				String opcion1 = scanner.nextLine();
+				int opcion1int =0;
+				try {
+					opcion1int = Integer.parseInt(opcion1);
+				}catch (NumberFormatException e) {
+					System.out.println("Ingrese un valor valido");
+				}
+				switch (opcion1int) {
+				case 1:
+					msg4="";
+					msg1=holding.recolectarToString();
+					msg4=holding.ordenarClubsporId(msg1);
+					System.out.println(msg4);
+					break;
+					
+				case 2:
+					msg4="";
+					msg1=holding.recolectarToString();
+					msg4=holding.ordenarClubsporNombre(msg1);
+					System.out.println(msg4);
+					break;
+					
+				case 3:
+					msg4="";
+					msg1=holding.recolectarToString();
+					msg4=holding.ordenarClubsporFecha(msg1);
+					System.out.println(msg4);
+					break;
+				default:
+					break;
+				}
 				break;
-
-			default:
+				
+			case 2:
+				String[] msg2;
+				System.out.println("||||||||||||||||||||||||||");
+				System.out.println("\n Please pick an option: ");
+				System.out.println("1. Ordenar por Id");
+				System.out.println("2. Ordenar por Apellido");
+				System.out.println("3. Ordenar por Nombre");
+				System.out.println("2. Ordenar por Fecha");
+				String opcion2 = scanner.nextLine();
+				int opcion1int2 =0;
+				try {
+					opcion1int2 = Integer.parseInt(opcion2);
+				}catch (NumberFormatException e) {
+					System.out.println("Ingrese un valor valido");
+				}
+				switch (opcion1int2) {
+					case 1:
+						msg4="";
+						msg2=holding.recolectarToStringOwner();
+						msg4=holding.ordenarOwnerporId(msg2);
+						System.out.println(msg4);
+						break;
+					
+					case 2:
+						msg4="";
+						msg2=holding.recolectarToStringOwner();
+						msg4=holding.ordenarOwnerporApellido(msg2);
+						System.out.println(msg4);
+						break;
+					
+					case 3:
+						msg4="";
+						msg2=holding.recolectarToStringOwner();
+						msg4=holding.ordenarOwnerporNombre(msg2);	
+						System.out.println(msg4);
+						break;
+					case 4:
+						msg4="";
+						msg2=holding.recolectarToStringOwner();
+						msg4=holding.ordenarOwnerporFecha(msg2);
+						System.out.println(msg4);
+						break;
+					default:
+						break;
+				}
+			case 3:
+				String[] msg3;
+				System.out.println("||||||||||||||||||||||||||");
+				System.out.println("\n Please pick an option: ");
+				System.out.println("1. Ordenar por Id");
+				System.out.println("3. Ordenar por Nombre");
+				System.out.println("2. Ordenar por Fecha");
+				String opcion3 = scanner.nextLine();
+				int opcion1int3 =0;
+				try {
+					opcion1int3 = Integer.parseInt(opcion3);
+				}catch (NumberFormatException e) {
+					System.out.println("Ingrese un valor valido");
+				}
+				switch (opcion1int3) {
+					case 1:
+						msg4="";
+						msg3=holding.recolectarToStringPets();
+						msg4=holding.ordenarPetporId(msg3);
+						System.out.println(msg4);
+						break;
+					
+					case 2:
+						msg4="";
+						msg3=holding.recolectarToStringPets();
+						msg4=holding.ordenarPetporNombre(msg3);
+						System.out.println(msg4);
+						break;
+					
+					case 3:
+						msg4="";
+						msg3=holding.recolectarToStringPets();
+						msg4=holding.ordenarPetporfecha(msg3);
+						System.out.println(msg4);
+						break;
+					default:
+						break;
+				}
+			break;
+			
+			case 4:
+				msg4="";
+				msg4=holding.ordenarCantidadMascotas();
+				System.out.println(msg4);
+			break;
+			
+			case 5:
+				msg4="";
+				msg4=holding.ordenarCantidadDueños();
+				System.out.println(msg4);
 				break;
-			}
+				
+			case 6:
+				msg4="";
+				String[] listaClub;
+				listaClub=holding.recolectarToString();
+				System.out.println("digite Id");
+				String Id = scanner.nextLine();
+				msg4=holding.buscarxClubBinaries(listaClub, Id);
+				break;
+				
+			case 7:	
+				msg4="";
+				String[] listaOwner;
+				listaOwner=holding.recolectarToStringOwner();
+				System.out.println("digite Id");
+				String Id1 = scanner.nextLine();
+				msg4=holding.buscarxOwnerBinaries(listaOwner, Id1);
+				break;
+				
+			case 8:
+				msg4="";
+				String[] listaPet;
+				listaPet=holding.recolectarToStringPets();
+				System.out.println("digite Id");
+				String Id2 = scanner.nextLine();
+				msg4=holding.buscarxOwnerBinaries(listaPet, Id2);
+				break;
+				
+			case 9:
+				msg4="";
+				System.out.println("digite Id");
+				String idC = scanner.nextLine();
+				
+				System.out.println("digite nombre");
+				String nombreC = scanner.nextLine();
+				
+				System.out.println("digite fecha de nacimiento");
+				String fechaC = scanner.nextLine();
+				
+				System.out.println("digite tipo de animales");
+				String tipoC = scanner.nextLine();
+				msg4= holding.ingresarClub(idC, nombreC, fechaC, tipoC);
+				System.out.println(msg4);
+				break;
+				
+			case 10:
+				msg4="";
+				System.out.println("digite Id");
+				String idO = scanner.nextLine();
+				
+				System.out.println("digite nombre");
+				String nombreO = scanner.nextLine();
+				
+				System.out.println("digite apellido");
+				String apellidoO = scanner.nextLine();
+				
+				System.out.println("digite fecha de nacimiento");
+				String fechaO = scanner.nextLine();
+				
+				System.out.println("digite animal favorito");
+				String tipoO = scanner.nextLine();
+				msg4= holding.ingresarOwner(idO, nombreO, apellidoO, fechaO, tipoO);
+				System.out.println(msg4);
+				break;
+				
+			case 11:
+				msg4="";
+				System.out.println("digite Id");
+				String idM = scanner.nextLine();
+				
+				System.out.println("digite nombre");
+				String nombreM = scanner.nextLine();
+				
+				System.out.println("digite apellido");
+				String fechaM = scanner.nextLine();
+				
+				System.out.println("digite fecha de nacimiento");
+				String generoM = scanner.nextLine();
+				
+				System.out.println("digite animal favorito");
+				String tipoM = scanner.nextLine();
+				
+				msg4= holding.ingresarPet(idM, nombreM, fechaM, generoM, tipoM);
+				System.out.println(msg4);
+				break;
+				
+			case 12:
+				msg4="";
+				System.out.println("digite id");
+				String idE = scanner.nextLine();
+				msg4=holding.eliminarclub(idE);
+				break;
+				
+			case 13:
+				msg4="";
+				System.out.println("digite id");
+				String idEO = scanner.nextLine();
+				msg4=holding.eliminarOwner(idEO);
+				break;
+				
+			case 14:
+				msg4="";
+				System.out.println("digite id");
+				String idEM = scanner.nextLine();
+				msg4=holding.eliminarMascota(idEM);
+				break;
+				
+				default:
+					System.out.println("what up man?");
+					break;
+				
 		}
 	}
+}
 }
