@@ -341,6 +341,105 @@ public class Holding {
 		return msg;
 	}
 	
+	//-----------------------------------------------------------------------------------
+	
+	public Owner buscarxOwner(String id) {
+		Owner obj=null;
+		for(int i=0;i<clubs.size();i++) {
+			for(int j=0;j<clubs.get(i).getOwners().size();j++)
+			if(clubs.get(i).getOwners().get(j).getId().equalsIgnoreCase(id)) {
+				obj=clubs.get(i).getOwners().get(j);
+			}
+		}
+		return obj;
+	}
+	
+	//-------------------------------------------------------------------------------------
+	
+	public String ingresarOwner(String Id, String nombre, String apellido, String fecha, String tipo) {
+		String msg="";
+		Owner objOwner=buscarxOwner(Id);
+		if(objOwner==null) {
+			for(int i=0; i<clubs.size();i++) {
+				for(int j=0; j<clubs.get(i).getOwners().size();j++)
+					clubs.get(i).addOwners(Id,nombre,apellido,fecha,tipo);
+					msg="Ha sido agregado";
+			}
+		}else {
+			msg="Hay un owner ya existente";
+		}
+		return msg;
+	}
+	
+	//-----------------------------------------------------------------------------------
+	
+		public Clubs buscarxClub(String id) {
+			Clubs obj=null;
+			for(int i=0;i<clubs.size();i++) {
+				if(clubs.get(i).getId().equalsIgnoreCase(id)) {
+					obj=clubs.get(i);
+				}
+			}
+			return obj;
+		}
+		
+		//-------------------------------------------------------------------------------------
+		
+		public String ingresarClub(String Id, String nombre, String fecha, String tipo) {
+			String msg="";
+			Clubs objOwner=buscarxClub(Id);
+			if(objOwner==null) {
+				for(int i=0; i<clubs.size();i++) {
+					Clubs clubs1 = new Clubs(Id, nombre, fecha, tipo);
+						clubs.add(clubs1);
+						msg="Ha sido agregado";
+				}
+			}else {
+				msg="Hay un owner ya existente";
+			}
+			return msg;
+		}
+		
+		//-----------------------------------------------------------------------------------
+		
+		public Pet buscarxPet(String id) {
+			Pet obj=null;
+			for(int i=0;i<clubs.size();i++) {
+				for(int j=0;j<clubs.get(i).getOwners().size();j++) {
+					for(int f=0;f<clubs.get(i).getOwners().get(j).getPets().size();f++) {
+						if(clubs.get(i).getOwners().get(j).getId().equalsIgnoreCase(id)) {
+							obj=clubs.get(i).getOwners().get(j).getPets().get(f);
+						}
+					}
+				}
+			}
+			return obj;
+		}
+		
+		//-------------------------------------------------------------------------------------
+		
+		public String ingresarPet(String Id, String nombre, String fecha, String genero, String tipo) {
+			String msg="";
+			Pet objPet=buscarxPet(Id);
+			if(objPet==null) {
+				for(int i=0; i<clubs.size();i++) {
+					for(int j=0; j<clubs.get(i).getOwners().size();j++)
+						for(int f=0;f<clubs.get(i).getOwners().get(j).getPets().size();f++) {
+							Pet pets1 = new Pet(Id, nombre, fecha, genero, tipo);
+							clubs.get(i).getOwners().get(j).getPets().add(pets1);
+							msg="Ha sido agregado";
+						}
+					}
+				}else {
+				msg="Hay un owner ya existente";
+			}
+			return msg;
+		}
+	
+	
+	
+	
+	
 	
 	
 }

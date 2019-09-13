@@ -129,4 +129,12 @@ public class Clubs implements Comparator<Clubs>{
 		}
 		return r;
 	}
-}
+
+
+
+	public void addOwners(String id2, String nombre, String apellido, String fecha, String tipo) {
+		Owner owners1 = new Owner(id2, nombre, apellido, fecha, tipo);
+		owners.add(owners1);
+		}
+	}
+
